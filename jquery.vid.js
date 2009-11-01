@@ -36,7 +36,7 @@
 				break;
 				
 				case 'dailymotion':
-				h	+= 'ailymotion.com/swf/' + c.videoId + '?enablejsapi=1&autoplay=' + ( c.autoPlay ? '1' : '0' );
+				h	+= 'dailymotion.com/swf/' + c.videoId + '?enablejsapi=1&autoplay=' + ( c.autoPlay ? '1' : '0' );
 				
 				break;
 				
