@@ -41,7 +41,7 @@
 				break;
 				
 				case '1click2fame':
-				h	+= '1click2fame.com/flash/Player.swf?videoID=' + c.videoId + '&autoPlay=' + ( c.autoPlay ? '1' : '0' );
+				h	+= '1click2fame.com/flash/Player.swf?videoID=' + c.videoId + '&autoPlay=' + c.autoPlay;
 				
 				break;
 			}
