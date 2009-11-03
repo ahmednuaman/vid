@@ -30,12 +30,12 @@ It's that simple!
 You can customise the settings, that's the hash you pass to vid():
 
 // required
-type			: 'youtube',		// String 		- defines the service, possible values are: youtube, vimeo, dailymotion, 1click2fame.
+type				: 'youtube',		// String 		- defines the service, possible values are: youtube, vimeo, dailymotion, 1click2fame.
 videoId			: '4wGR4-SeuJ0',	// String		- defines the unique video identifier
 // optional
 autoPlay		: false,			// Boolean		- defines whether to autoplay the video or not
-loop			: false,			// Boolean		- defines whether to loop the video or not
-hq				: true,				// Boolean		- defines whether to play the highest quality version, so HD or HQ, rather than SD
-chromeless		: false				// Boolean		- defines whether to use the chromless player for youtube only
+loop				: false,			// Boolean		- defines whether to loop the video or not
+hq					: true,				// Boolean		- defines whether to play the highest quality version, so HD or HQ, rather than SD
+chromeless	: false				// Boolean		- defines whether to use the chromless player for youtube only
 
 It includes a copy of the jQuery SWFObject plugin by Jonathan Neal: http://jquery.thewikies.com/swfobject/
