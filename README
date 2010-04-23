@@ -37,5 +37,6 @@ autoPlay		: false,			// Boolean		- defines whether to autoplay the video or not
 loop				: false,			// Boolean		- defines whether to loop the video or not
 hq					: true,				// Boolean		- defines whether to play the highest quality version, so HD or HQ, rather than SD
 chromeless	: false				// Boolean		- defines whether to use the chromless player for youtube only
+resize			: true,				// Boolean		- defines whether you want the player to resize dynamicly to its parent's size
 
 It includes a copy of the jQuery SWFObject plugin by Jonathan Neal: http://jquery.thewikies.com/swfobject/

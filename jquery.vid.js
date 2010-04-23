@@ -10,7 +10,8 @@
 			autoPlay		: false,				// Boolean		- defines whether to autoplay the video or not
 			loop			: false,				// Boolean		- defines whether to loop the video or not
 			hq				: true,					// Boolean		- defines whether to play the highest quality version, so HD or HQ, rather than SD
-			chromeless		: false					// Boolean		- defines whether to use the chromless player for youtube only
+			chromeless		: false,				// Boolean		- defines whether to use the chromless player for youtube only
+			resize			: true					// Boolean		- defines whether you want the player to resize dynamicly to its parent's size
 		};
 	
 		if ( arguments[ 0 ] )
@@ -20,13 +21,14 @@
 
 		this.each( function() 
 		{
+			var e	= $( this );
 			var h	= '';
 			var v	= { };
 			
 			switch ( c.type )
 			{
 				case 'youtube':
-				h	+= 'youtube.com/v/' + c.videoId + '?enablejsapi=1&autoplay=' + ( c.autoPlay ? '1' : '0' ) + '&loop=' + ( c.loop ? '1' : '0' ) + ( c.hq ? '&hd=1' : '' ) + ( c.chromless ? '&version=3' : '' );
+				h	+= 'youtube.com/' + ( c.chromeless ? 'apiplayer' : 'v/' + c.videoId ) + '?enablejsapi=1&version=3&autoplay=' + ( c.autoPlay ? '1' : '0' ) + '&loop=' + ( c.loop ? '1' : '0' ) + ( c.hq ? '&hd=1' : '' );
 				
 				break;
 				
@@ -46,12 +48,26 @@
 				break;
 			}
 			
-			$( this ).flash({
+			e.flash({
 				swf			: 'http://' + h,
-				width		: $( this ).width(),
-				height		: $( this ).height(),
+				height		: e.height(),
+				width		: e.width(),
 				flashvars	: v
 			});
+			
+			if ( c.resize )
+			{
+				$( window ).resize( function()
+				{
+					var ts	= [ $( 'object', e ), $( 'embed', e ) ];
+					
+					$( ts ).each( function()
+					{
+						$( this ).attr( 'height', e.height() );
+						$( this ).attr( 'width', e.width() );
+					});
+				})
+			}
 		});
 		
 		return this;
