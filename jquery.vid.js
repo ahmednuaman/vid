@@ -57,7 +57,7 @@
 			
 			if ( c.resize )
 			{
-				$( window ).resize( function()
+				$( this ).parent().resize( function()
 				{
 					var ts	= [ $( 'object', e ), $( 'embed', e ) ];
 					
